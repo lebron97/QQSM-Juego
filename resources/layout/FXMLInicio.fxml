@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="panelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.controlador.FXMLInicioController">
+   <children>
+      <MenuBar prefHeight="23.0" prefWidth="1000.0" AnchorPane.bottomAnchor="617.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opciones">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#verInstrucciones" text="Cómo Jugar" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.9789579158316634" layoutY="25.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="imagenfondog" stylesheets="@../estilos/estilo.css" SplitPane.resizableWithParent="false">
+               <children>
+                  <Button layoutX="235.0" layoutY="279.0" mnemonicParsing="false" onAction="#comenzarJuego" prefHeight="56.0" prefWidth="531.0" style="-fx-background-color: transparent;" stylesheets="@../estilos/estilo.css" AnchorPane.bottomAnchor="278.0" AnchorPane.topAnchor="279.0">
+                     <font>
+                        <Font name="Century Gothic" size="28.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Bloom threshold="0.99" />
+                     </effect>
+                  </Button>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="imagenfondo" stylesheets="@../estilos/estilo.css" SplitPane.resizableWithParent="false">
+               <children>
+                  <TextField fx:id="txtBuscaPregunta" layoutX="279.0" layoutY="370.0" prefHeight="23.0" prefWidth="398.0" promptText="Escribe aquí..." AnchorPane.bottomAnchor="220.0" AnchorPane.topAnchor="370.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="43.0" layoutY="358.0" prefHeight="47.0" prefWidth="228.0" text="Pregunta a buscar:" wrapText="true" AnchorPane.bottomAnchor="208.0" AnchorPane.topAnchor="358.0">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.05238095238095238" startY="0.9523809523809523">
+                           <stops>
+                              <Stop color="#0b71e3" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <TableView fx:id="tblPreguntas" layoutX="43.0" layoutY="30.0" onMouseClicked="#eventoTabla" prefHeight="317.0" prefWidth="906.0" style="-fx-background-color: #A9E2F3;" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="30.0">
+                    <columns>
+                      <TableColumn fx:id="cPreguntas" prefWidth="699.0" text="Pregunta" />
+                      <TableColumn fx:id="cDificultad" minWidth="0.0" prefWidth="206.0" text="Dificultad" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="819.0" layoutY="560.0" mnemonicParsing="false" onAction="#borrarPregunta" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #A9E2F3;" text="Borrar Pregunta" AnchorPane.bottomAnchor="14.0" AnchorPane.topAnchor="560.0">
+                     <font>
+                        <Font name="Serif Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="43.0" layoutY="412.0" prefHeight="47.0" prefWidth="236.0" text="Modificar Pregunta:" wrapText="true">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.05238095238095238" startY="0.9523809523809523">
+                           <stops>
+                              <Stop color="#0b71e3" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <TextField fx:id="txtModificaPregunta" layoutX="279.0" layoutY="424.0" prefHeight="23.0" prefWidth="398.0" promptText="Selecciona una pregunta" AnchorPane.bottomAnchor="166.0" AnchorPane.topAnchor="424.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="43.0" layoutY="466.0" prefHeight="47.0" prefWidth="236.0" text="Añadir Pregunta:" wrapText="true">
+                     <font>
+                        <Font name="Serif Bold" size="26.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.05238095238095238" startY="0.9523809523809523">
+                           <stops>
+                              <Stop color="#0b71e3" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <TextField fx:id="txtPregunta" layoutX="279.0" layoutY="475.0" prefHeight="21.0" prefWidth="398.0" promptText="Pregunta">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtRespUno" layoutX="43.0" layoutY="520.0" prefHeight="29.0" prefWidth="165.0" promptText="Respuesta 1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtRespDos" layoutX="242.0" layoutY="520.0" prefHeight="29.0" prefWidth="165.0" promptText="Respuesta 2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtRespTres" layoutX="43.0" layoutY="565.0" prefHeight="29.0" prefWidth="165.0" promptText="Respuesta 3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtRespCuatro" layoutX="242.0" layoutY="565.0" prefHeight="29.0" prefWidth="165.0" promptText="Respuesta 4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtDificultad" layoutX="439.0" layoutY="565.0" prefHeight="29.0" prefWidth="79.0" promptText="Dificultad">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtRespCorrecta" layoutX="439.0" layoutY="520.0" prefHeight="29.0" prefWidth="79.0" promptText="R.Correcta">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="710.0" layoutY="366.0" mnemonicParsing="false" onAction="#buscarPregunta" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #A9E2F3;" text="Buscar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Serif Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="710.0" layoutY="420.0" mnemonicParsing="false" onAction="#modificarPregunta" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #A9E2F3;" text="Modificar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Serif Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="710.0" layoutY="474.0" mnemonicParsing="false" onAction="#anadirPregunta" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #A9E2F3;" text="Añadir">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Serif Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" fx:id="panelInstrucciones" prefHeight="640.0" prefWidth="1000.0" styleClass="imagenfinal" stylesheets="@../estilos/estilo.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="vista.controlador.FXMLInstruccionesController">
+   <children>
+      <Label layoutX="37.0" layoutY="195.0" prefHeight="414.0" prefWidth="949.0" text="En este juego deberás ir respondiendo preguntas para conseguir el dinero. La recompensa por cada pregunta cada vez es mayor. Cada 5 preguntas se guardará tu dinero, por  tanto aunque falles más adelante ganarás ese dinero. También puedes plantarte con el dinero que tienes actualmente. Dispones de 3 comodines, del público, del 50% y parar el tiempo." wrapText="true">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="53.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="68.0" prefHeight="79.0" prefWidth="241.0" text="Instrucciones" wrapText="true">
+         <font>
+            <Font name="Bodoni MT Poster Compressed" size="67.0" />
+         </font>
+      </Label>
+      <Button layoutX="37.0" layoutY="590.0" mnemonicParsing="false" onAction="#irAtras" prefHeight="33.0" prefWidth="84.0" style="-fx-background-color: #1f36e7;" text="Atrás" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
